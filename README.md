@@ -40,25 +40,11 @@ sailesh-mandal-portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── components/
-│   │   │   ├── ui/              # Reusable UI components (buttons, cards, etc.)
-│   │   │   ├── figma/           # Image utilities
-│   │   │   ├── About.tsx        # About section
-│   │   │   ├── Contact.tsx      # Contact form section
-│   │   │   ├── Experience.tsx   # Experience timeline
-│   │   │   ├── Footer.tsx       # Footer with social links
-│   │   │   ├── GitHubStats.tsx  # GitHub statistics display
-│   │   │   ├── Hero.tsx         # Landing/Hero section
-│   │   │   ├── Navigation.tsx   # Main navigation bar
-│   │   │   ├── PageLoader.tsx   # Initial page loader
-│   │   │   ├── ParticleBackground.tsx  # Animated particles
-│   │   │   ├── Projects.tsx     # Projects showcase
-│   │   │   ├── ScrollProgress.tsx      # Scroll indicator
-│   │   │   ├── ScrollToTop.tsx  # Scroll to top button
-│   │   │   ├── SEO.tsx          # SEO meta tags manager
-│   │   │   ├── SkillCloud.tsx   # Floating skill tags
-│   │   │   ├── Skills.tsx       # Skills section
-│   │   │   ├── Testimonials.tsx # Client testimonials
-│   │   │   └── TypingAnimation.tsx  # Typing effect
+│   │   │   ├── layout/           # Navigation, loaders, scroll helpers, SEO, footer
+│   │   │   ├── sections/         # Hero, About, Skills, Projects, Experience, Testimonials, Contact
+│   │   │   ├── shared/           # Reusable portfolio-specific helpers
+│   │   │   ├── ui/               # Reusable UI components (buttons, cards, etc.)
+│   │   │   ├── figma/            # Image utilities
 │   │   └── App.tsx              # Main application component
 │   ├── imports/                 # Image assets
 │   └── styles/                  # Global styles and themes
@@ -70,6 +56,8 @@ sailesh-mandal-portfolio/
 ├── postcss.config.mjs          # PostCSS configuration
 └── README.md                    # This file
 ```
+
+Generated folders such as `dist/` and `node_modules/` are not part of the source structure and can be recreated when needed.
 
 ## 🚀 Getting Started
 
@@ -110,37 +98,37 @@ sailesh-mandal-portfolio/
 
 ### Update Personal Information
 
-#### 1. Hero Section (`/src/app/components/Hero.tsx`)
+#### 1. Hero Section (`/src/app/components/sections/Hero.tsx`)
 - Update name, title, and description
 - Replace profile image
 - Modify CTA button links
 
-#### 2. About Section (`/src/app/components/About.tsx`)
+#### 2. About Section (`/src/app/components/sections/About.tsx`)
 - Edit personal description
 - Update personality points
 - Modify GitHub stats values
 
-#### 3. Skills Section (`/src/app/components/Skills.tsx`)
+#### 3. Skills Section (`/src/app/components/sections/Skills.tsx`)
 - Add/remove skills
 - Adjust skill levels
 - Update skill categories
 
-#### 4. Projects Section (`/src/app/components/Projects.tsx`)
+#### 4. Projects Section (`/src/app/components/sections/Projects.tsx`)
 - Add your projects
 - Update project images
 - Modify project descriptions and links
 
-#### 5. Experience Section (`/src/app/components/Experience.tsx`)
+#### 5. Experience Section (`/src/app/components/sections/Experience.tsx`)
 - Update work experience
 - Add education details
 - Modify timeline entries
 
-#### 6. Contact Section (`/src/app/components/Contact.tsx`)
+#### 6. Contact Section (`/src/app/components/sections/Contact.tsx`)
 - Update contact information
 - Modify social media links
 - Customize contact form
 
-### Update SEO (`/src/app/components/SEO.tsx`)
+### Update SEO (`/src/app/components/layout/SEO.tsx`)
 - Modify meta title and description
 - Update keywords for better search ranking
 - Change Open Graph image
