@@ -1,5 +1,5 @@
 import { Star, Quote } from "lucide-react";
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { motion } from "motion/react";
 
 const testimonials = [

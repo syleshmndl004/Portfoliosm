@@ -1,7 +1,7 @@
 import { Lightbulb, Target, Heart, Rocket } from "lucide-react";
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { motion } from "motion/react";
-import { GitHubStats } from "./GitHubStats";
+import { GitHubStats } from "../shared/GitHubStats";
 
 const personalityPoints = [
   {
@@ -72,14 +72,14 @@ export function About() {
               <span className="text-foreground font-medium">
                 Sailesh Mandal
               </span>
-              , a passionate Developer and a Learner. based in{" "}
+              , a passionate developer and lifelong learner based
+              in{" "}
               <span className="text-foreground font-medium">
                 Nepal
               </span>
-              . With over years of experience in web
-              development, I specialize in creating seamless
-              digital experiences that bridge the gap between
-              beautiful design and robust functionality.
+              . I specialize in creating seamless digital
+              experiences that bridge the gap between beautiful
+              design and robust functionality.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

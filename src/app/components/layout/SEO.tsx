@@ -40,8 +40,8 @@ export function SEO({
     "CSS",
     "Figma",
   ],
-  ogImage = "/og-image.png",
-  url = "https://saileshmandal.com",
+  ogImage = "https://saileshmandal.me/Files/pfile.png",
+  url = "https://saileshmandal.me",
 }: SEOProps = {}) {
   useEffect(() => {
     // Set document title
@@ -90,6 +90,7 @@ export function SEO({
 
     // Additional SEO tags
     setMetaTag("theme-color", "#0891b2");
+    setMetaTag("mobile-web-app-capable", "yes");
     setMetaTag("apple-mobile-web-app-capable", "yes");
     setMetaTag("apple-mobile-web-app-status-bar-style", "black-translucent");
     setMetaTag("apple-mobile-web-app-title", "Sailesh Mandal");

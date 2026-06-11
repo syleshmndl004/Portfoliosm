@@ -17,7 +17,7 @@
 
 import { motion, useInView, useMotionValue, useSpring } from "motion/react";
 import { GitBranch, Star, GitFork, Code } from "lucide-react";
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { useEffect, useRef } from "react";
 import React from "react";
 
