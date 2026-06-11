@@ -14,7 +14,7 @@
 
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { motion, AnimatePresence } from "motion/react";
 
 // Navigation menu items
@@ -30,9 +30,17 @@ const navLinks = [
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    const shouldUseDark = savedTheme === "dark";
+
+    setIsDark(shouldUseDark);
+    document.documentElement.classList.toggle("dark", shouldUseDark);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,8 +64,12 @@ export function Navigation() {
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
+    setIsDark((current) => {
+      const next = !current;
+      document.documentElement.classList.toggle("dark", next);
+      window.localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
   };
 
   const scrollToSection = (href: string) => {
@@ -84,6 +96,7 @@ export function Navigation() {
             <motion.a
               href="#home"
               className="text-xl sm:text-2xl font-bold text-primary"
+              aria-label="Go to home section"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection("#home");
@@ -134,6 +147,7 @@ export function Navigation() {
                   size="icon"
                   onClick={toggleTheme}
                   className="rounded-full"
+                  aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
                 >
                   {isDark ? (
                     <Sun className="size-4 sm:size-5" />
@@ -148,7 +162,10 @@ export function Navigation() {
                 variant="ghost"
                 size="icon"
                 className="md:hidden rounded-full"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                onClick={() => setIsMobileMenuOpen((open) => !open)}
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
               >
                 {isMobileMenuOpen ? (
                   <X className="size-5" />
@@ -164,6 +181,7 @@ export function Navigation() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-navigation"
               className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border/50"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}

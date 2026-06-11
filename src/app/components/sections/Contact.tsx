@@ -1,13 +1,14 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
 import { useState } from "react";
 import { toast } from "sonner";
 import { motion } from "motion/react";
 
 export function Contact() {
+  const recipientEmail = "saileshkumar2061@gmail.com";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,11 +17,15 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock form submission
-    toast.success(
-      "Message sent successfully! I'll get back to you soon.",
+    const subject = encodeURIComponent(
+      `Portfolio contact from ${formData.name.trim()}`,
     );
-    setFormData({ name: "", email: "", message: "" });
+    const body = encodeURIComponent(
+      `Name: ${formData.name.trim()}\nEmail: ${formData.email.trim()}\n\nMessage:\n${formData.message.trim()}`,
+    );
+
+    window.location.href = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+    toast.success("Opening your email app with your message.");
   };
 
   const handleChange = (
@@ -105,10 +110,10 @@ export function Contact() {
                     Email
                   </p>
                   <a
-                    href="mailto:saileshkumar2061@gmail.com"
+                    href={`mailto:${recipientEmail}`}
                     className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors break-all"
                   >
-                    saileshkumar2061@gmail.com
+                    {recipientEmail}
                   </a>
                 </div>
               </motion.div>
@@ -135,7 +140,7 @@ export function Contact() {
                     Phone
                   </p>
                   <a
-                    href="tel:+977 9812358400"
+                    href="tel:+9779812358400"
                     className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors"
                   >
                     +977 9812358400
@@ -165,7 +170,7 @@ export function Contact() {
                     Location
                   </p>
                   <p className="text-sm sm:text-base text-muted-foreground">
-                    Biratnagar,Morang
+                    Biratnagar, Morang
                   </p>
                 </div>
               </motion.div>

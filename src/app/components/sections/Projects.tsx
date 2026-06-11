@@ -1,13 +1,13 @@
 import { ExternalLink, Github } from "lucide-react";
-import { Card } from "./ui/card";
-import { Badge } from "./ui/badge";
+import { Card } from "../ui/card";
+import { Badge } from "../ui/badge";
 import { motion } from "motion/react";
 
 // Import project images
-import Project1 from "../../imports/Project1.png";
-import Project2 from "../../imports/Project2.png";
-import Project3 from "../../imports/Project3.png";
-import Project4 from "../../imports/image.png";
+import Project1 from "../../../imports/Project1.png";
+import Project2 from "../../../imports/Project2.png";
+import Project3 from "../../../imports/Project3.png";
+import Project4 from "../../../imports/image.png";
 
 const projects = [
   {
@@ -94,7 +94,7 @@ export function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
             >
-              <Card className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all h-full flex flex-col">
+              <Card className="overflow-hidden group hover:shadow-2xl transition-all h-full flex flex-col">
                 <div className="relative aspect-video overflow-hidden">
                   <motion.img
                     src={project.image}
@@ -103,16 +103,12 @@ export function Projects() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   />
-                  <motion.div
-                    className="absolute inset-0 bg-black/60 flex items-center justify-center gap-3 sm:gap-4"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-3 sm:gap-4 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100 transition-opacity duration-300">
                     <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} live demo`}
                       className="p-2.5 sm:p-3 bg-white rounded-full hover:bg-gray-100 transition-colors"
                       onClick={(e) => e.stopPropagation()}
                       whileHover={{ scale: 1.2, rotate: 10 }}
@@ -124,6 +120,7 @@ export function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} source code`}
                       className="p-2.5 sm:p-3 bg-white rounded-full hover:bg-gray-100 transition-colors"
                       onClick={(e) => e.stopPropagation()}
                       whileHover={{ scale: 1.2, rotate: -10 }}
@@ -131,7 +128,7 @@ export function Projects() {
                     >
                       <Github className="size-4 sm:size-5 text-black" />
                     </motion.a>
-                  </motion.div>
+                  </div>
                 </div>
                 <div className="p-5 sm:p-6 flex-1 flex flex-col">
                   <h3 className="text-xl sm:text-2xl font-semibold mb-2">{project.title}</h3>

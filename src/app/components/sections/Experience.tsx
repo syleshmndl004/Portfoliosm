@@ -1,5 +1,5 @@
 import { Briefcase, GraduationCap } from "lucide-react";
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { motion } from "motion/react";
 
 const experiences = [
@@ -7,7 +7,7 @@ const experiences = [
   {
     title: "Web Developer",
     company: "StartUp Hub",
-    location: "Morang,Biratnagar",
+    location: "Biratnagar, Morang",
     period: "2025 - 2026",
     type: "work",
     achievements: [
@@ -23,7 +23,7 @@ const education = [
     degree: "Bsc Hons. Computer Science",
     University: "University of Wolverhampton",
     institution: "Biratnagar International College",
-    location: "Morang,Biratnagar",
+    location: "Biratnagar, Morang",
     period: "2024 - 2026",
     type: "education",
     status: "running",
@@ -102,9 +102,9 @@ export function Experience() {
                     animate={{
                       scale: [1, 1.5, 1],
                       boxShadow: [
-                        "0 0 0 0 rgba(var(--primary), 0.4)",
-                        "0 0 0 10px rgba(var(--primary), 0)",
-                        "0 0 0 0 rgba(var(--primary), 0)",
+                        "0 0 0 0 rgba(59, 130, 246, 0.4)",
+                        "0 0 0 10px rgba(59, 130, 246, 0)",
+                        "0 0 0 0 rgba(59, 130, 246, 0)",
                       ],
                     }}
                     transition={{
@@ -184,9 +184,9 @@ export function Experience() {
                     animate={{
                       scale: [1, 1.5, 1],
                       boxShadow: [
-                        "0 0 0 0 rgba(var(--primary), 0.4)",
-                        "0 0 0 10px rgba(var(--primary), 0)",
-                        "0 0 0 0 rgba(var(--primary), 0)",
+                        "0 0 0 0 rgba(59, 130, 246, 0.4)",
+                        "0 0 0 10px rgba(59, 130, 246, 0)",
+                        "0 0 0 0 rgba(59, 130, 246, 0)",
                       ],
                     }}
                     transition={{

@@ -50,8 +50,8 @@ export function Footer() {
               <motion.a
                 key={link.label}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="p-2.5 sm:p-3 rounded-full bg-background hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label={link.label}
                 initial={{ opacity: 0, y: 20 }}

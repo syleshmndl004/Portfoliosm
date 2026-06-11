@@ -13,10 +13,10 @@
  */
 
 import { ArrowRight } from "lucide-react";
-import { Button } from "./ui/button";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Button } from "../ui/button";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { motion, useScroll, useTransform } from "motion/react";
-import { TypingAnimation } from "./TypingAnimation";
+import { TypingAnimation } from "../shared/TypingAnimation";
 
 export function Hero() {
   // Parallax scroll effects for background elements
@@ -35,7 +35,10 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 sm:py-24 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] flex items-start md:items-center justify-center px-4 sm:px-6 py-12 sm:py-16 lg:py-20 relative overflow-hidden"
+    >
       {/* Animated Background Elements with Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

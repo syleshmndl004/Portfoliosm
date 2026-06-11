@@ -1,6 +1,6 @@
-import { Card } from "./ui/card";
+import { Card } from "../ui/card";
 import { motion } from "motion/react";
-import { SkillCloud } from "./SkillCloud";
+import { SkillCloud } from "../shared/SkillCloud";
 
 const skills = [
   {
