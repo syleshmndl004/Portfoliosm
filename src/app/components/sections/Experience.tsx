@@ -23,7 +23,7 @@ const education = [
     degree: "Bsc Hons. Computer Science",
     institution: "Biratnagar International College",
     location: "Biratnagar, Morang",
-    period: "2024 - 2026",
+    period: "2024 - Running",
     type: "education",
     status: "running",
     achievements: [
