@@ -21,7 +21,6 @@ const experiences = [
 const education = [
   {
     degree: "Bsc Hons. Computer Science",
-    University: "University of Wolverhampton",
     institution: "Biratnagar International College",
     location: "Biratnagar, Morang",
     period: "2024 - 2026",
@@ -30,6 +29,26 @@ const education = [
     achievements: [
       "On the Way",
     ],
+  },
+  {
+    degree: "Secondary Education",
+    institution: "Greenland Secondary School",
+    location: "Biratnagar, Nepal",
+    period: "2022 - 2024",
+    type: "education",
+    status: "completed",
+    achievements: [
+      "+2 with Major Science",
+    ],
+  },
+  {
+    degree: "Primary Education",
+    institution: "Arpan English School",
+    location: "Biratnagar, Nepal",
+    period: "2010 - 2022",
+    type: "education",
+    status: "completed",
+    achievements: [],
   },
 ];
 
