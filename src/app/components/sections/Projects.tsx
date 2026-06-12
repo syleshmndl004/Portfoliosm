@@ -16,7 +16,7 @@ const projects = [
     description:
       "A modern weather application that provides real-time weather information with a clean and intuitive interface. Features current conditions, forecasts, and location-based weather updates.",
     image: Project1,
-    tags: ["HTML", "CSS", "JavaScript", "API"],
+    tags: ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
     link: "https://syleshmndl004.github.io/weatherapp/",
     github: "https://github.com/syleshmndl004/weatherapp",
   },
@@ -26,7 +26,7 @@ const projects = [
     description:
       "An interactive movie search application that allows users to discover and explore movies. Features include search functionality, movie details, ratings, and a responsive design.",
     image: Project2,
-    tags: ["HTML", "CSS", "JavaScript", "Movie API"],
+    tags: ["HTML", "CSS", "JavaScript", "OMDb API"],
     link: "https://syleshmndl004.github.io/moviesearch/",
     github: "https://github.com/syleshmndl004/moviesearch",
   },
