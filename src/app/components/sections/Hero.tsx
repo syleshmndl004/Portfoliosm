@@ -17,6 +17,7 @@ import { Button } from "../ui/button";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { motion, useScroll, useTransform } from "motion/react";
 import { TypingAnimation } from "../shared/TypingAnimation";
+import profileImage from "../../../imports/profile.jpg";
 
 export function Hero() {
   // Parallax scroll effects for background elements
@@ -186,7 +187,7 @@ export function Hero() {
                 transition={{ duration: 0.3 }}
               >
                 <ImageWithFallback
-                  src="https://saileshmandal.me/Files/pfile.png"
+                  src={profileImage}
                   alt="Sailesh Mandal"
                   className="size-full object-cover"
                 />
