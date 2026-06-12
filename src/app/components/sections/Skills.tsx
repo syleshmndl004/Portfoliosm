@@ -6,25 +6,33 @@ const skills = [
   {
     category: "Frontend",
     technologies: [
-      { name: "HTML5", icon: "🌐", level: 95 },
-      { name: "CSS3", icon: "🎨", level: 95 },
-      { name: "JavaScript", icon: "⚡", level: 90 },
+      { name: "HTML5", icon: "🌐", level: 95, learning: false },
+      { name: "CSS3", icon: "🎨", level: 95, learning: false },
+      { name: "JavaScript", icon: "⚡", level: 90, learning: false },
     ],
   },
   {
     category: "Backend",
     technologies: [
-      { name: "PHP", icon: "🟢", level: 85 },
-      { name: "JAVA", icon: "🟢", level: 85 },
+      { name: "PHP", icon: "🟢", level: 85, learning: false },
+      { name: "JAVA", icon: "☕", level: 85, learning: false },
     ],
   },
   {
     category: "Design & Tools",
     technologies: [
-      { name: "Figma", icon: "🎨", level: 90 },
-      { name: "Git", icon: "📦", level: 92 },
-      { name: "GitHub", icon: "😺", level: 90 },
-      { name: "VS Code", icon: "💻", level: 95 },
+      { name: "Figma", icon: "🎨", level: 90, learning: false },
+      { name: "Git", icon: "📦", level: 92, learning: false },
+      { name: "GitHub", icon: "😺", level: 90, learning: false },
+      { name: "VS Code", icon: "💻", level: 95, learning: false },
+    ],
+  },
+  {
+    category: "Currently Learning",
+    technologies: [
+      { name: "React", icon: "⚛️", level: 40, learning: true },
+      { name: "Node.js", icon: "🟩", level: 35, learning: true },
+      { name: "TypeScript", icon: "🔷", level: 30, learning: true },
     ],
   },
 ];
@@ -112,18 +120,35 @@ export function Skills() {
                             {tech.name}
                           </span>
                         </div>
-                        <span className="text-xs sm:text-sm text-muted-foreground">
-                          {tech.level}%
-                        </span>
+                        {tech.learning ? (
+                          <span className="text-xs sm:text-sm font-medium text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full">
+                            Learning
+                          </span>
+                        ) : (
+                          <span className="text-xs sm:text-sm text-muted-foreground">
+                            {tech.level}%
+                          </span>
+                        )}
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <motion.div
-                          className="h-full bg-primary rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${tech.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: setIndex * 0.1 + techIndex * 0.1 + 0.3 }}
-                        />
+                        {tech.learning ? (
+                          <motion.div
+                            className="h-full bg-amber-500 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${tech.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5, delay: setIndex * 0.1 + techIndex * 0.1 + 0.3 }}
+                            animate={{ opacity: [1, 0.5, 1] }}
+                          />
+                        ) : (
+                          <motion.div
+                            className="h-full bg-primary rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${tech.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: setIndex * 0.1 + techIndex * 0.1 + 0.3 }}
+                          />
+                        )}
                       </div>
                     </motion.div>
                   ))}
