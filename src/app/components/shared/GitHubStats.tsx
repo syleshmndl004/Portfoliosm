@@ -26,25 +26,25 @@ const stats = [
   {
     icon: Code,
     label: "Total Commits",
-    value: 1247,
+    value: 86,
     color: "text-blue-500",
   },
   {
     icon: Star,
     label: "Stars Earned",
-    value: 156,
+    value: 10,
     color: "text-yellow-500",
   },
   {
     icon: GitFork,
     label: "Forks",
-    value: 42,
+    value: 1,
     color: "text-green-500",
   },
   {
     icon: GitBranch,
     label: "Repositories",
-    value: 28,
+    value: 22,
     color: "text-purple-500",
   },
 ];
