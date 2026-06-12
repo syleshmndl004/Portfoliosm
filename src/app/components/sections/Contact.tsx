@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 
 export function Contact() {
   const recipientEmail = "saileshkumar2061@gmail.com";
+  const displayEmail = "hello@saileshmandal.me";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -113,40 +114,11 @@ export function Contact() {
                     href={`mailto:${recipientEmail}`}
                     className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors break-all"
                   >
-                    {recipientEmail}
+                    {displayEmail}
                   </a>
                 </div>
               </motion.div>
-              <motion.div
-                className="flex items-start gap-3 sm:gap-4"
-                whileHover={{ x: 10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.div
-                  animate={{
-                    y: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: 0.3,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Phone className="size-5 sm:size-6 text-primary mt-1" />
-                </motion.div>
-                <div>
-                  <p className="font-medium mb-1 text-sm sm:text-base">
-                    Phone
-                  </p>
-                  <a
-                    href="tel:+9779812358400"
-                    className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +977 9812358400
-                  </a>
-                </div>
-              </motion.div>
+
               <motion.div
                 className="flex items-start gap-3 sm:gap-4"
                 whileHover={{ x: 10 }}
